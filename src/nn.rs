@@ -20,15 +20,15 @@ pub struct NN {
     activations: Vec<Matrix>,
 }
 
-pub struct NN_Config {
+pub struct NnConfig {
     pub learning_rate: f64,
     pub max_epochs: usize,
     pub max_errors: f64,
 }
 
-impl NN_Config {
+impl NnConfig {
     pub fn new(learning_rate: f64, max_epochs: usize, max_errors: f64) -> Self {
-        NN_Config {
+        NnConfig {
             learning_rate,
             max_epochs,
             max_errors,
@@ -36,7 +36,7 @@ impl NN_Config {
     }
     
     pub fn init() -> Self {
-        NN_Config {
+        NnConfig {
             learning_rate: 0.05,
             max_epochs: 100000,//usize::MAX,
             max_errors: 0.0001,
@@ -45,7 +45,7 @@ impl NN_Config {
 }
 
 impl NN {
-    pub fn new(activation_func: Activation, arch: Vec<usize>, options: NN_Config) -> Self {
+    pub fn new(activation_func: Activation, arch: Vec<usize>, options: NnConfig) -> Self {
         let size: usize = arch.len() - 1;
         NN {
             learning_rate: options.learning_rate,

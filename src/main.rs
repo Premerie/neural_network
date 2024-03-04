@@ -9,7 +9,7 @@ fn main() {
     
     let output: Matrix = Matrix::new( 4, 1, vec![1., 1., 1., 0.]);
     
-    let options: NN_Config = NN_Config::init();
+    let options: NnConfig = NnConfig::init();
     
     let mut nn: NN = NN::new(
         Activation::Tanh, 
